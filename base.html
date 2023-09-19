@@ -4,31 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <script src = "operations.js"></script>
-    <link rel= "stylesheet" href= "styles.css">    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class = "container"></div>
     <h1>Basic Calculator</h1>
-    <button class = "numbers" value= "1">1</button>
-    <button class = "numbers" value= "2">2</button>
-    <button class = "numbers" value= "3">3</button>
-    <button class = "char" value= "+"">+</button>
-    <br>
-    <button class = "numbers" value= "4">4</button>
-    <button class = "numbers" value= "5">5</button>
-    <button class = "numbers" value= "6">6</button>
-    <button class = "char" value= "-""> - </button>
-    <br>
-    <button class = "numbers" value= "7">7</button>
-    <button class = "numbers" value= "8">8</button>
-    <button class = "numbers" value= "9">9</button>
-    <button class = "char" value= "*"> * </button>
-    <br>
-    <button class = "char extra" value= "equal"> = </button>
-    <button class = "char extra" value= "Clear"> Clear </button>
     
-
+    <br>
+    <div class="container">
+        <input id="display" class="input" disabled>
+        <div>
+    <button class="button extra" onclick="clearDisplay()">Clear</button>
+    <button class="button " onclick="appendToDisplay('%')">%</button>
+    <button class="button" onclick="appendToDisplay('/')">/</button>
+    <div>
+    <button class="button" onclick="appendToDisplay('9')">9</button>
+    <button class="button" onclick="appendToDisplay('8')">8</button>
+    <button class="button" onclick="appendToDisplay('7')">7</button>
+    <button class="button" onclick="appendToDisplay('+')">+</button>
+</div>
+</div>
+<div>
+    <button class="button" onclick="appendToDisplay('6')">6</button>
+    <button class="button" onclick="appendToDisplay('5')">5</button>
+    <button class="button" onclick="appendToDisplay('4')">4</button>
+    <button class="button" onclick="appendToDisplay('-')">-</button>
+</div>
+<div>
+    <button class="button" onclick="appendToDisplay('3')">3</button>
+    <button class="button" onclick="appendToDisplay('2')">2</button>
+    <button class="button" onclick="appendToDisplay('1')">1</button>
+    <button class="button" onclick="appendToDisplay('*')">*</button>
+</div>
+<div>
+    <button class="button" onclick="appendToDisplay('0')">0</button>
+    <button class="button" onclick="appendToDisplay('00')">00</button>
+    <button class="button extra equal" onclick="calculateResult()">=</button>
+</div>
     
+    </div>
+    
+    <script src="operations.js"></script>
 </body>
 </html>

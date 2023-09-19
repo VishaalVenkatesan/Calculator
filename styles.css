@@ -1,31 +1,67 @@
-h1{
-    
-}
-body {
-    background-color:green;
-    padding-left: 550px;
-    padding-top:100px;
-
-}
-.numbers {
-    padding: 30px;
-    border-radius: 20;
-    margin:80;
-    background-color:#CDB450;
-    width: 70px;
-    font-size: medium;
-}
-
-.char {
-    padding: 30px;
-    border-radius: 20;
-    margin:80;
-    width: 70px;
-    font-size: large;
-    font-weight: 300;
-    color:wheat;
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+*{
     background-color:black;
+     font-family: 'Mooli', sans-serif;
+}
+h1{
+    color:goldenrod;
+    text-align: center;
+    font-size: 60px;
+}
+.container{
+    background-color:black;
+    display: grid;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 10px;
+    align-items:center;
+}
+.button {
+    color: wheat;
+    border-radius: 20%;
+    margin:15px; 
+    padding: 20px;
+    outline: 2px;
+    border: 1px solid black;
+    font-size: 50px;
+    background-color: black;
+    box-sizing: border-box;
+    line-height: 20px;
+   
+}
+button:hover{
+    transform: scale(1.1);
+}
+
+button:active{
+    transform: scale(1.2);
 }
 .extra{
-    width: 145px;
+    border-width: 3px;
+    margin-top: 5px;
+    margin-left: 20px;
+    border-color: blue;
+    border-radius:10px;
+
+}
+.input{
+    display: flex;
+    justify-content: center;
+    text-align: end;
+    width:350px;
+    margin-bottom: 3px;
+    background-color: black;
+    padding: 20px;
+    color:blueviolet;
+    font-size: 60px;
+    border-color:wheat;
+    
+}
+.equal{
+    border-width: 3px;
+    width: 150px;
+    font-size: 70px;
+    border-color: blue;
+    border-radius:10px;
+    margin-left: 30px;
 }

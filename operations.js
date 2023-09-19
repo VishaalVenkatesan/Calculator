@@ -1,42 +1,64 @@
-var firstNum;
-var secondNum;
-var char;
-var result;
-const num = document.querySelector('#numbers');
-num.addEventListener('click', () => {
-  
-});
+let firstNum = '';
+let secondNum = '';
+let operator = '';
+let result = '';
+const display = document.getElementById('display');
 
-function add(a, b){
-    result = a + b;
+function appendToDisplay(value) {
+    if (value === '+' || value === '-' || value === '*' || value === '/' || value === '%' ) {
+        if (firstNum !== '' && secondNum === '') {
+            operator = value;
+            display.value += ' ' + value + ' ';
+        }
+    } else {
+        if (operator === '') {
+            firstNum += value;
+            display.value += value;
+        } else {
+            secondNum += value;
+            display.value += value;
+        }
+    }
 }
 
-function subtract(a, b){
-    result = a - b;
+function clearDisplay() {
+    firstNum = '';
+    secondNum = '';
+    operator = '';
+    result = '';
+    display.value = '';
 }
 
-function multiply(a, b){
-    result = a * b;
-}
+function calculateResult() {
+    if (firstNum !== '' && secondNum !== '') {
+        const num1 = parseFloat(firstNum);
+        const num2 = parseFloat(secondNum);
 
-function divide(a, b){
-    result = a / b;
-}
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+                case '%':
+                    result = num1 % num2;
+                    break; 
+            case '/':
+                if (num2 !== 0) {
+                    result = num1 / num2;
+                } else {
+                    result = 'Error: Division by zero';
+                }
+                break;
+        }
 
-function operate(firstNum, char, secondNum){
-    if(char == "+"){
-        add(firstNum, secondNum);
-    }
-    if(char == "-"){
-        subtract(firstNum, secondNum);
-    }
-    if(char == "*"){
-        multiply(firstNum, secondNum);
-    }
-    if(chat == "/"){
-        divide(firstNum, secondNum);
-    }
-    if(char == "="){
-        return result;
+        display.value = result;
+        firstNum = result.toString();
+        secondNum = '';
+        operator = '';
     }
 }
